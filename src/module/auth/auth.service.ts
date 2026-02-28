@@ -45,7 +45,7 @@ const register = async (payload: any) => {
     return {
         ...data,
         accessToken: newAccessToken,
-        refreshToken: newRefreshToken
+    refreshToken: newRefreshToken
 
     };
 
