@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
-import { auth } from './lib/auth';
+import { auth } from './app/lib/auth';
 import { toNodeHandler } from 'better-auth/node';
-import { IndexRoutes } from './routes';
+import { IndexRoutes } from './app/routes';
 const app: Application = express();
 
 app.use(express.json());
@@ -16,7 +16,7 @@ app.get('/', async (req: Request, res: Response) => {
 })
 
 
-app.use("/api/v1/" , IndexRoutes);
+app.use("/api/v1/", IndexRoutes);
 
 
 
