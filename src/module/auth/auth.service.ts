@@ -16,6 +16,8 @@ const register = async (payload :any) =>{
         }
     })
 
+    console.log(data);
+
     if(!data){
         throw new Error("Failed to register user");
     }
