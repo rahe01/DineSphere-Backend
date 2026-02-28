@@ -25,14 +25,17 @@
     "@prisma/client": "^7.4.1",
     "better-auth": "^1.4.19",
     "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
     "express": "^5.2.1",
     "http-status": "^2.1.0",
     "jsonwebtoken": "^9.0.3",
     "nodemailer": "^8.0.1",
+    "path": "^0.12.7",
     "pg": "^8.19.0",
     "tsx": "^4.21.0"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.3.2",

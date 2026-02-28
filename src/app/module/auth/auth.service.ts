@@ -1,3 +1,4 @@
+
 import { auth } from "../../lib/auth";
 import { TokenUtils } from "../../utils/token";
 
@@ -45,7 +46,7 @@ const register = async (payload: any) => {
     return {
         ...data,
         accessToken: newAccessToken,
-    refreshToken: newRefreshToken
+        refreshToken: newRefreshToken
 
     };
 
