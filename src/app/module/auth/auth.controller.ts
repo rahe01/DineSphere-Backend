@@ -15,6 +15,8 @@ const register = catchAsync(async (req: Request, res: Response) => {
     TokenUtils.setRefreshTokenCookie(res, refreshToken);
     TokenUtils.setBetterAuthSessionCookie(res, token as string);
 
+    console.log(payload);
+
 
 
 
