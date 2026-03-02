@@ -98,10 +98,33 @@ const login = async (payload: any) => {
 
     };
 
+};
+
+
+
+const verifyEmail = async (payload:IEmailVerificationPayload) =>{
+    const {email, otp} = payload;
+
+   const data = await auth.api.verifyEmailOTP({
+        body:{
+            email,
+            otp
+        }
+    })
+
+    if(!data){
+        throw new Error("Failed to verify email");
+    }
+
+    return data;
+
+
+
 }
 
 export const authService = {
     register,
-    login
+    login,
+    verifyEmail
 
 }
