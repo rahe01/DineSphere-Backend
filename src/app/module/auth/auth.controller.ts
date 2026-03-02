@@ -61,8 +61,20 @@ const login = catchAsync(async (req: Request, res: Response) => {
     })
 })
 
-export default {
-    register,
-    login
-}
+const verifyEmail = catchAsync(async (req: Request, res: Response) => {
 
+    const payload = req.body;
+    const data = await authService.verifyEmail(payload);
+    sendResponse(res, {
+        httpStatusCode: status.OK,
+        success: true,
+        message: "Email verified successfully",
+        data
+    })
+})
+
+export const authController = {
+    register,
+    login,
+    verifyEmail
+};
