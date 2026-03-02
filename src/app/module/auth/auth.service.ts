@@ -1,5 +1,6 @@
 
 import { auth } from "../../lib/auth";
+import { prisma } from "../../lib/prisma";
 import { TokenUtils } from "../../utils/token";
 
 
@@ -112,11 +113,24 @@ const verifyEmail = async (payload:IEmailVerificationPayload) =>{
         }
     })
 
+   if(data.status && !data.user.emailVerified){
+      await prisma.user.update({
+           where: {
+               email
+           },
+           data: {
+               emailVerified: true
+           }
+
+       })   
+
+}
+
     if(!data){
         throw new Error("Failed to verify email");
     }
 
-    return data;
+   
 
 
 
