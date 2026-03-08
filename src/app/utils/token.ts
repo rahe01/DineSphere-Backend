@@ -43,7 +43,7 @@ const setRefreshTokenCookie = (res: Response, token: string) => {
 };
 
 const setBetterAuthSessionCookie = (res: Response, token: string) => {
-    CookieUtils.setCookie(res, "better-auth.session_token", token, {
+    CookieUtils.setCookie(res, "better-auth.dinesphere_session_token", token, {
         ...DEFAULT_COOKIE_OPTIONS,
         maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
     });
