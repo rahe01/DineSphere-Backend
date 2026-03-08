@@ -19,7 +19,6 @@ export const auth = betterAuth({
     
 
 
-
     user: {
         additionalFields: {
             role: {
@@ -74,7 +73,10 @@ export const auth = betterAuth({
                             }
                         })
                     }
+
                 }
+
+
 
 
 

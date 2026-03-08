@@ -36,7 +36,7 @@ const registerUserZodSchema = z.object({
 });
 
 
- const loginUserZodSchema = z.object({
+const loginUserZodSchema = z.object({
     email: z
         .string({ error: "Email is required" })
         .trim()
