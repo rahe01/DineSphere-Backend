@@ -51,7 +51,22 @@ const loginUserZodSchema = z.object({
 
 
 
+const changePasswordZodSchema = z.object({
+    oldPassword: z
+        .string({ error: "Old password is required" })
+        .min(6, { error: "Old password must be at least 6 characters" })
+        .max(100, { error: "Old password cannot exceed 100 characters" }),
+
+    newPassword: z
+        .string({ error: "New password is required" })
+        .min(6, { error: "New password must be at least 6 characters" })
+        .max(100, { error: "New password cannot exceed 100 characters" })   
+});
+
+
 export const authValidation = {
     registerUserZodSchema,
     loginUserZodSchema,
+    changePasswordZodSchema
+
 }
